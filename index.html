@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Unleashing the Potential: How Automated Metadata Creation Can Improve Your Data Quality and Accessibility</title>
+		<link rel="icon" type="image/x-icon" href="/images/astun_icon.jpg">
+
+		<meta name="description" content="A talk for FOSS4G:UK Local 2023 (Bristol)">
+		<meta name="author" content="Astun Technology">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		
+		<!-- base theme -->
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- all Astun customisations -->
+		<link rel="stylesheet" href="custom/astun.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3 style="color:var(--astun-red); text-shadow: 1px 1px 2px #3f3e3e;">Unleashing the Potential: How Automated Metadata Creation Can Improve Your Data Quality and Accessibility</h3>
+					<br>
+					<p style="color:var(--astun-blue); font-weight: 600;"><small>Elena Robu | Astun Technology</small></p>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">What is Metadata anyway? 🤔</h3>
+					<div class="twocolumn">
+						<div class="fragment fade-in">
+							<img src="/images/cans.jpg" alt="unlabelled cans" style="border-radius: 20px;">
+							<p> <small class="attribution">Photo by <a href="https://unsplash.com/@yesmorecontent?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">YesMore Content</a> on <a href="https://unsplash.com/photos/mSCiBh0YUgo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
+							</p>
+						</div>
+						<div class="fragment fade-in">
+							<br>
+							<p style="text-align: center;">In simple terms, metadata is data about data.</p>
+						</div>
+					</div>
+					<aside class="notes">
+						<p>My colleague Jo Cook covered this in good detail in a past webinar, I highly recommend you keep an eye out for future sessions, or watch our recording on <a href="https://www.youtube.com/watch?v=7qSrGgTKlRk" target="_blank">YouTube</a></p>
+						<p>Think of it as the labels in a supermarket. If you want to buy a can of dog food and there are no labels on the cans you might end up with cat food instead, or baked beans, or beer, who knows?</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">What is <strong style="color:var(--astun-blue)">Q-FAIR</strong> all about? 🎡</h3>
+					<p class="fragment box-left fade-in" style="background-color:var(--astun-red)"><strong style="color:var(--astun-blue)">Q</strong>uality</p>
+					<p class="fragment box-right fade-in" style="background-color:var(--astun-red)"><strong style="color:var(--astun-blue)">-</strong> is just a hyphen</p>
+					<p class="fragment box-left fade-in" style="background-color:var(--astun-red);margin-top: 125px !important"><strong style="color:var(--astun-blue)">F</strong>indable</p>
+					<p class="fragment box-right fade-in" style="background-color:var(--astun-red);margin-top: 125px !important"><strong style="color:var(--astun-blue)">A</strong>ccessible</p>
+					<p class="fragment box-left fade-in" style="background-color:var(--astun-red);margin-top: 250px !important"><strong style="color:var(--astun-blue)">I</strong>nteroperable</p>
+					<p class="fragment box-right fade-in" style="background-color:var(--astun-red);margin-top: 250px !important"><strong style="color:var(--astun-blue)">R</strong>eusable</p>
+					<aside class="notes">Q-FAIR is all about making your data high-quality, findable, accessible, interoperable and reusable. This is best (or most easily) achieved if your metadata is also Q-FAIR, and also best achieved using open standards and formats where possible.</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h3 class="box" style="background-color:var(--astun-red)">Background</h3>
+					<p style="color:var(--astun-red)" class="fragment fade-in">Why are we doing this? 🤷</p>
+					<aside class="notes">We have a need to make it much easier for people to create metadata in bulk for thousands of datasets at once.</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h3 class="box" style="background-color:var(--astun-red)">Background</h3>
+					<p style="color:var(--astun-red)">How do we do this now? 🕰️</p>
+					<p class="fragment">
+						<small>Metadata Crawler open source plugin for Talend Open Studio (aka Crawler)</small>
+					</p>
+					<aside class="notes">
+						<p>Crawler looks for spatial data in file systems and databases.</p>
+						<p>It creates a metadata record for each data source it discovers, and a Feature Catalog record for vector data sources.</p>
+						<p>We generate a spreadsheet with a row per record for data owners to complete the manual fields.</p>
+						<p>I included a link in the speaker notes to a presentation by my colleague Jo from a few years ago on how we do this in more technical detail.</p>
+						<p>FOSS4G:UK 2020 - <a href="https://archaeogeek.github.io/foss4guk2020-metadata/#/" target="_blank">Crawler presentation by Jo Cook</a></p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">What are these fields? 📜</h3>
+					<div class="twocolumn" style="align-items: center;">
+						<div class="fragment fade-in">
+							<ul style="font-size: large;">
+								<li class="box small-box">Abstract</li>
+								<li class="box small-box">Alternative Title</li>
+								<li class="box small-box">Bounding box</li>
+								<li class="box small-box">Constraints (usage and licensing)</li>
+								<li class="box small-box">Contact Details</li>
+								<li class="box small-box">Date</li>
+								<li class="box small-box">Geographic Extent (keyword)</li>
+								<li class="box small-box">Keywords (free text or controlled)</li>
+							</ul>
+						</div>
+						<div class="fragment fade-in">
+							<ul style="font-size: large;">
+								<li class="box small-box">Lineage</li>
+								<li class="box small-box">Spatial Reference System</li>
+								<li class="box small-box">Resolution</li>
+								<li class="box small-box">Temporal Extent</li>
+								<li class="box small-box">Title</li>
+								<li class="box small-box">Topic Category (controlled)</li>
+								<li class="box small-box">Update Frequency</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						<p>We need a number of fields to create compliant metadata records</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">What are these fields? 📜</h3>
+					<div class="twocolumn" style="align-items: center;">
+						<div>
+							<ul style="font-size: large;">
+								<li class="box small-box">Abstract</li>
+								<li class="box small-box">Alternative Title</li>
+								<li class="box small-box fragment fade-out">Bounding box</li>
+								<li class="box small-box">Constraints (usage and licensing)</li>
+								<li class="box small-box">Contact Details</li>
+								<li class="box small-box fragment fade-out">Date</li>
+								<li class="box small-box">Geographic Extent (keyword)</li>
+								<li class="box small-box">Keywords (free text or controlled)</li>
+							</ul>
+						</div>
+						<div>
+							<ul style="font-size: large;">
+								<li class="box small-box">Lineage</li>
+								<li class="box small-box fragment fade-out">Spatial Reference System</li>
+								<li class="box small-box">Resolution</li>
+								<li class="box small-box">Temporal Extent</li>
+								<li class="box small-box fragment fade-out">Title</li>
+								<li class="box small-box">Topic Category (controlled)</li>
+								<li class="box small-box">Update Frequency</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						<p>Things we can calculate with Crawler</p>
+					</aside>
+				</section>
+
+				<section data-auto-animate>
+					<h3 class="box" style="background-color:var(--astun-red)">What are these fields? 📜</h3>
+					<div class="twocolumn" style="align-items: center;">
+						<div>
+							<ul style="font-size: large;">
+								<li class="box small-box">Abstract</li>
+								<li class="box small-box">Alternative Title</li>
+								<li class="box small-box fragment fade-out">Constraints (usage and licensing)</li>
+								<li class="box small-box fragment fade-out">Contact Details</li>
+								<li class="box small-box">Geographic Extent (keyword)</li>
+								<li class="box small-box">Keywords (free text or controlled)</li>
+							</ul>
+						</div>
+						<div>
+							<ul style="font-size: large;">
+								<li class="box small-box fragment fade-out">Lineage</li>
+								<li class="box small-box fragment fade-out">Resolution</li>
+								<li class="box small-box fragment fade-out">Temporal Extent</li>
+								<li class="box small-box">Topic Category (controlled)</li>
+								<li class="box small-box fragment fade-out">Update Frequency</li>
+							</ul>
+						</div>
+					</div>
+					<aside class="notes">
+						<p>Things we can populate with placeholder text</p>
+					</aside>
+				</section>
+
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">What are these fields? 📜</h3>
+						<div>
+							<ul style="font-size: large;">
+								<li class="box small-box">Abstract</li>
+								<li class="box small-box">Alternative Title</li>
+								<li class="box small-box">Geographic Extent (keyword)</li>
+								<li class="box small-box">Keywords (free text or controlled)</li>
+								<li class="box small-box">Topic Category (controlled)</li>
+							</ul>
+						</div>
+					<aside class="notes">
+						<p>We are still left with a number of elements that can be quite time-consuming for our clients to populate if they have large data holdings</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">How do we automate these? 🧑‍💻</h3>
+					<img src="./images/SpaCy.png" class="fragment fade-in"/>
+					<p class="fragment fade-in"><small>"industrial strength open source NLP in Python"</small></p>
+					<aside class="notes">Easy to pick up, actively developed and used, and well documented. We looked at other approaches but they weren't such a good fit.</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">Geographic Keywords 🌍</h3>
+					<div class="twocolumn">
+						<div class="box-left fragment fade-in" style="background-color:var(--astun-red)">
+							<p style="text-align: center;">NER model trained on OS Open Names</p>
+						</div>
+						<div class="box-right fragment fade-in" style="background-color:var(--astun-red)">
+							<p style="text-align: center;">Pattern recognition model (postcodes)</p>
+						</div>
+					</div>
+					<aside class="notes">
+						<p>This was the trickiest element to handle. Geoparsing is definitely a "Thing", but generally not very fine-grained. We needed it to recognise UK roads, any sort of settlement, mountains, rivers, and postcodes</p>
+						<p>We built two custom pipelines- one that used NER trained on the OS Open Names dataset, and one that uses pattern recognition to pick up postcodes.</p>
+						<p>This approach was best for processing efficiency and can be run on a normal laptop</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">Non-Geographic Keywords 🏷️</h3>
+					<img class="fragment" src="./images/pytextrank.jpeg"/>
+					<img class="fragment" src="./images/keybert.png"/>
+					<img class="fragment" style="height:160px" src="./images/yake.png"/>
+					<aside class="notes">
+						<p>There are loads of options for this and we're not sure yet which approach gives consistently the best results, so we're currently running a few of them</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">INSPIRE Keywords and Topic Categories 🔖</h3>
+					<div class="fragment fade-in">
+						<p>Text Classification</p>
+					</div>
+					<aside class="notes">
+						<p>These are controlled text fields so we're using text classification to pick the keywords/categories that best match the data.</p>
+					</aside>
+				</section>
+
+				
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">Everything Else</h3>
+					<img style="height:400px" src="./images/all_the_things.jpg" class="fragment fade-in"/>
+					<aside class="notes">
+						<p>For this we're using the OpenAI API to generate the abstract, the human-readable title, and to pick the most popular results from all the other modules. We include a confidence score to help our clients prioritize the workload for large data holdings</p>
+					</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">How will this work IRL? 🤔</h3>
+					<aside class="notes">Instead of the clients having to fill things in, they will simply review these auto-generated values and correct any glaring errors</aside>
+				</section>
+
+				<section>
+					<h3 class="box" style="background-color:var(--astun-red)">Questions? 🙋</h3>
+					<img src="/images/polarbear.jpg" height="375px">
+					<p><small class="attribution">Photo by <a href="https://unsplash.com/@hansjurgen007?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hans-Jurgen Mager</a> on <a href="https://unsplash.com/photos/qQWV91TTBrE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+					</small></p>
+				</section>
+
+			</div>
+
+			<div class="fe-persistent-header">
+ 				<a href="http://astuntechnology.com" target="_blank"><img src="./images/AstunSmallLogo.png"/></a>
+				<p style="color: var(--astun-red); font-weight:600;">Experts in Place</p>
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				pdfMaxPagesPerSlide: 1,
+				pdfSeparateFragments: false,
+				slideNumber: "c/t",
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+			Reveal.configure({ showNotes: 'separate-page' });
+
+		</script>
+
+	</body>
+</html>
