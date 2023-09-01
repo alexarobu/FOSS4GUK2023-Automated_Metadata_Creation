@@ -35,7 +35,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h3 style="color:var(--astun-red); text-shadow: 1px 1px 2px #3f3e3e;">Unleashing the Potential: How Automated Metadata Creation Can Improve Your Data Quality and Accessibility</h3>
+					<h3 style="color:var(--astun-red);">Unleashing the Potential: How Automated Metadata Creation Can Improve Your Data Quality and Accessibility</h3>
 					<br>
 					<p style="color:var(--astun-blue); font-weight: 600;"><small>Elena Robu | Astun Technology</small></p>
 				</section>
@@ -208,7 +208,9 @@
 					<h3 class="box" style="background-color:var(--astun-red)">How do we automate these? 🧑‍💻</h3>
 					<img src="./images/SpaCy.png" class="fragment fade-in"/>
 					<p class="fragment fade-in"><small>"industrial strength open source NLP in Python"</small></p>
-					<aside class="notes">Easy to pick up, actively developed and used, and well documented. We looked at other approaches but they weren't such a good fit.</aside>
+					<aside class="notes">
+						<p>Easy to pick up, actively developed and used, and well documented. We looked at other approaches but they weren't such a good fit.</p>
+					</aside>
 				</section>
 
 				<section>
@@ -251,7 +253,7 @@
 				
 				<section>
 					<h3 class="box" style="background-color:var(--astun-red)">Everything Else</h3>
-					<img style="height:400px" src="./images/all_the_things.jpg" class="fragment fade-in"/>
+					<img height="400px" src="./images/all_the_things.jpg" class="fragment fade-in"/>
 					<aside class="notes">
 						<p>For this we're using the OpenAI API to generate the abstract, the human-readable title, and to pick the most popular results from all the other modules. We include a confidence score to help our clients prioritize the workload for large data holdings</p>
 					</aside>
@@ -259,7 +261,30 @@
 
 				<section>
 					<h3 class="box" style="background-color:var(--astun-red)">How will this work IRL? 🤔</h3>
-					<aside class="notes">Instead of the clients having to fill things in, they will simply review these auto-generated values and correct any glaring errors</aside>
+					<aside class="notes">
+						<p>Instead of the clients having to fill things in, they will simply review these auto-generated values and correct any glaring errors.</p>
+					</aside>
+				</section>
+
+				<section>
+					<img src="./images/crawler-input.png" height="600px"/>
+					<aside class="notes">
+						<p>We start from a bunch of files in a directory or a database and process these with Crawler (which includes all the machine learning workflow as well)</p>
+					</aside>
+				</section>
+
+				<section>
+					<img src="./images/crawler-output.png" style="transform: scale(1.4);"/>
+					<aside class="notes">
+						<p>We then produce a spreadsheet which is shared with and signed off by the client</p>
+					</aside>
+				</section>
+
+				<section>
+					<img src="./images/geonetwork-record.png" style="transform: scale(1.15);"/>
+					<aside class="notes">
+						<p>And finally, once signed off by the client, we use the spreadsheet to update the records in GeoNetwork</p>
+					</aside>
 				</section>
 
 				<section>
@@ -300,7 +325,7 @@
 				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
 			});
 
-			Reveal.configure({ showNotes: 'separate-page' });
+			// Reveal.configure({ showNotes: 'separate-page' });
 
 		</script>
 
