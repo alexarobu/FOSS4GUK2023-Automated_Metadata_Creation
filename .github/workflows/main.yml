@@ -1,4 +1,4 @@
-name: Continous Integration
+name: Continuous Integration
 
 on:
   push:
@@ -7,13 +7,11 @@ on:
   pull_request:
 
 permissions:
-  contents: write
-
+  contents: read
 jobs:
-
   dependabot:
     name: 'Dependabot'
-    runs-on: master
+    runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'}}
     steps:
       - name: Dependabot metadata
