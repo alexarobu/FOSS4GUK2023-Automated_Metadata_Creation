@@ -52,7 +52,7 @@
     "highlight.js": "^11.9.0",
     "marked": "^18.0.0",
     "node-qunit-puppeteer": "^2.1.0",
-    "qunit": "^2.17.2",
+    "qunit": "^3.0.0",
     "rollup": "^4.40.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.39.2",
